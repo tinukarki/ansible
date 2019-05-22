@@ -7,5 +7,7 @@ juniper_srx:
   - hostname: juniper_r2
   - dns1: 2.2.2.2
   - dns2: 22.22.22.22
+  
+  - hostname: juniper_r3
 
 ...
