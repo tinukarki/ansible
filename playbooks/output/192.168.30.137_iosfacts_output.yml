@@ -1,0 +1,286 @@
+ansible_facts:
+    ansible_net_all_ipv4_addresses:
+    - 192.168.30.137
+    - 192.168.11.2
+    - 192.168.15.1
+    - 11.11.11.11
+    - 192.168.12.1
+    - 192.168.13.1
+    - 192.168.14.1
+    ansible_net_all_ipv6_addresses: []
+    ansible_net_filesystems:
+    - 'system:'
+    ansible_net_gather_subset:
+    - hardware
+    - default
+    - interfaces
+    ansible_net_hostname: Cisco-R1
+    ansible_net_image: unix:/opt/gns3/images/IOU/i86bi_linux-adventerprisek9-ms.152-4.M1.bi
+    ansible_net_interfaces:
+        Ethernet0/0:
+            bandwidth: 10000
+            description: null
+            duplex: null
+            ipv4:
+            -   address: 192.168.11.2
+                subnet: '24'
+            lineprotocol: 'up '
+            macaddress: aabb.cc00.0300
+            mediatype: null
+            mtu: 1500
+            operstatus: up
+            type: AmdP2
+        Ethernet0/1:
+            bandwidth: 10000
+            description: null
+            duplex: null
+            ipv4:
+            -   address: 192.168.30.137
+                subnet: '24'
+            lineprotocol: 'up '
+            macaddress: aabb.cc00.0310
+            mediatype: null
+            mtu: 1500
+            operstatus: up
+            type: AmdP2
+        Ethernet0/2:
+            bandwidth: 10000
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: aabb.cc00.0320
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: AmdP2
+        Ethernet0/3:
+            bandwidth: 10000
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: aabb.cc00.0330
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: AmdP2
+        Loopback0:
+            bandwidth: 8000000
+            description: null
+            duplex: null
+            ipv4:
+            -   address: 11.11.11.11
+                subnet: '32'
+            lineprotocol: 'up '
+            macaddress: 11.11.11.11/32
+            mediatype: null
+            mtu: 1514
+            operstatus: up
+            type: null
+        Loopback1:
+            bandwidth: 8000000
+            description: null
+            duplex: null
+            ipv4:
+            -   address: 192.168.12.1
+                subnet: '24'
+            lineprotocol: 'up '
+            macaddress: 192.168.12.1/24
+            mediatype: null
+            mtu: 1514
+            operstatus: up
+            type: null
+        Loopback2:
+            bandwidth: 8000000
+            description: null
+            duplex: null
+            ipv4:
+            -   address: 192.168.13.1
+                subnet: '24'
+            lineprotocol: 'up '
+            macaddress: 192.168.13.1/24
+            mediatype: null
+            mtu: 1514
+            operstatus: up
+            type: null
+        Loopback3:
+            bandwidth: 8000000
+            description: null
+            duplex: null
+            ipv4:
+            -   address: 192.168.14.1
+                subnet: '24'
+            lineprotocol: 'up '
+            macaddress: 192.168.14.1/24
+            mediatype: null
+            mtu: 1514
+            operstatus: up
+            type: null
+        Loopback4:
+            bandwidth: 8000000
+            description: null
+            duplex: null
+            ipv4:
+            -   address: 192.168.15.1
+                subnet: '24'
+            lineprotocol: 'up '
+            macaddress: 192.168.15.1/24
+            mediatype: null
+            mtu: 1514
+            operstatus: up
+            type: null
+        NVI0:
+            bandwidth: 56
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'up '
+            macaddress: null
+            mediatype: null
+            mtu: 1514
+            operstatus: up
+            type: null
+        Serial1/0:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+        Serial1/1:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+        Serial1/2:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+        Serial1/3:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+        Serial2/0:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+        Serial2/1:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+        Serial2/2:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+        Serial2/3:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+        Serial3/0:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+        Serial3/1:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+        Serial3/2:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+        Serial3/3:
+            bandwidth: 1544
+            description: null
+            duplex: null
+            ipv4: []
+            lineprotocol: 'down '
+            macaddress: null
+            mediatype: null
+            mtu: 1500
+            operstatus: administratively down
+            type: null
+    ansible_net_memfree_mb: 22486
+    ansible_net_memtotal_mb: 124582
+    ansible_net_model: null
+    ansible_net_neighbors:
+        'null':
+        -   host: null
+            port: null
+    ansible_net_serialnum: '2048003'
+    ansible_net_version: 15.2(4)M1
+changed: false
+failed: false

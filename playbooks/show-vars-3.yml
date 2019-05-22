@@ -1,0 +1,10 @@
+---
+- name: Show variables
+  hosts: all
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: show variables
+      debug:
+        var: vars

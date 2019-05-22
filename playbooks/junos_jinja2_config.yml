@@ -1,0 +1,20 @@
+---
+- name: Get device uptime
+  hosts:
+    - juniper_srx
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+  vars_files:
+    - /etc/ansible/vars/junos_dns.yml
+
+  vars:
+    conf_file: /etc/ansible/configs/"{{ item.hostname }}.conf"
+
+  tasks:
+    - name: save device info using template
+      template:
+        src: /etc/ansible/templates/junos_base.j2
+        dest: "{{ conf_file }}"
+        with_items: "{{ juniper_srx }}"

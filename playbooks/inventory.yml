@@ -1,0 +1,37 @@
+- name: Get invetory Junos
+  connection: local
+  gather_facts: False
+  hosts: juniper_router
+  roles:
+    - Juniper.junos
+  vars_files:
+  - /etc/ansible/vars/credentials.yml
+  - /etc/ansible/vars/playbook_vars.yml
+  tasks:
+    - name: junos inventory
+      junos_get_facts:
+        host: "{{ ansible_host }}"
+        port: 22
+        username: sshlogin
+      register: junos_facts
+    - copy: content="{{ junos_facts | to_nice_json }}" dest="/etc/ansible/inventory/inventory_{{ inventory_hostname }}.json"
+
+    - name: show device facts
+      debug:
+        var: junos_facts
+
+- name: backup ios
+  connection: local
+  gather_facts: False
+  hosts: cisco_router
+  vars_files:
+  - /etc/ansible/vars/credentials.yml
+  tasks:
+    - name: cisco invetory
+      ios_facts:
+        provider:
+          host: "{{ ansible_host }}"
+          username: "{{ username }}"
+          password: "{{ password }}"
+      register: cisco_facts
+    - copy: content="{{ cisco_facts | to_nice_json }}" dest="/etc/ansible/inventory/inventory_{{ inventory_hostname }}.json"

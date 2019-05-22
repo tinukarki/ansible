@@ -1,0 +1,26 @@
+---
+ - name: show commands
+   connection: local
+   gather_facts: False
+   hosts: 192.168.30.137
+   vars_files:
+   - /etc/ansible/vars/credentials.yml
+   - /etc/ansible/vars/main.yml
+   
+   tasks:
+
+   - name: configure provider
+     set_fact:
+       provider:
+         username: "{{username}}"
+         password: "{{password}}"
+
+   - name: show commands
+     ios_command:
+       provider: "{{provider}}"
+       commands:
+        - show version
+        - show interface
+     register: output
+   - debug: var=output.stdout_lines
+...

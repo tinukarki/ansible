@@ -1,0 +1,8 @@
+---
+- name: RUN 'SHOW VERSION'
+      hosts: cisco_router
+      username: admin
+      password: C1sco123
+      ios_config:
+        line: - show ver
+...

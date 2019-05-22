@@ -1,0 +1,22 @@
+---
+ - name: show commands
+   connection: local
+   gather_facts: False
+   hosts: 192.168.30.137
+   vars_files:
+   - /etc/ansible/vars/credentials.yml
+   - /etc/ansible/vars/main.yml
+   
+   tasks:
+     - name: configure provider
+       set_fact:
+         provider:
+           username: "{{username}}"
+           password: "{{password}}"
+
+     - name: show commands
+       register: output
+       ios_facts:
+         provider: "{{provider}}"
+     - copy: content="{{ output | to_nice_yaml }}" dest="/etc/ansible/playbooks/output/{{inventory_hostname}}_iosfacts_output.yml"
+...

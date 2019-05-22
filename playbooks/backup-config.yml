@@ -1,0 +1,46 @@
+---
+
+
+- name: backup junos
+  connection: local
+  gather_facts: False
+  hosts: juniper_router
+  roles:
+    - Juniper.junos
+  vars_files:
+  - /etc/ansible/vars/credentials.yml
+  - /etc/ansible/vars/playbook_vars.yml
+  tasks:
+    - name: save junos configs
+      junos_get_config:
+        host: "{{ ansible_host }}"
+        port: 22
+        username: "{{ username }}"
+        password: "{{ password }}"
+        dest: "/etc/ansible/configs/backup_configs/show_run_{{ inventory_hostname }}.txt"
+        format: text
+
+- name: backup ios
+  connection: local
+  gather_facts: False
+  hosts: cisco_router
+  vars_files:
+  - /etc/ansible/vars/credentials.yml
+  tasks:
+    - name: backup cisco_router
+      ios_command:
+        provider:
+          host: "{{ ansible_host }}"
+          username: "{{ username }}"
+          password: "{{ password }}"
+        commands:
+        - show run
+      register: config
+    - debug: var=config.stdout_lines[0]
+
+    - name: save cisco configs
+      copy:
+        content: "{{ config.stdout[0] }}"
+        dest: "/etc/ansible/configs/backup_configs/show_run_{{ inventory_hostname }}.txt"
+
+...

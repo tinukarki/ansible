@@ -1,0 +1,11 @@
+---
+juniper_srx:
+  - hostname: juniper_r1
+  - dns1: 1.1.1.1
+  - dns2: 11.11.11.11
+
+  - hostname: juniper_r2
+  - dns1: 2.2.2.2
+  - dns2: 22.22.22.22
+
+...

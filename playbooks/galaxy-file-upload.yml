@@ -1,0 +1,25 @@
+---
+- name: Install Config File
+  hosts:
+    - juniper_srx
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+  vars_files:
+    - /etc/ansible/vars/credentials.yml
+    - /etc/ansible/vars/playbook_vars.yml
+  tasks:
+    - name: install configuration file to deivce
+      junos_install_config:
+        file: /etc/ansible/configs/name-server.conf
+        provider:
+          host: "{{ ansible_host }}"
+          port: 22
+          username: admin
+          password: C1sco123
+      register: uptime
+
+    - name: display uptime
+      debug: var=uptime

@@ -1,0 +1,9 @@
+---
+cisco_router:
+ - {snmp_server: 192.168.30.136, snmp_user: lab_ios, snmp_auth: snmpv3auth, snmp_priv: snmpv3priv, snmp_group: snmpv3group}
+
+juniper_srx:
+ - {snmp_server: 192.168.30.136, snmp_user: lab_srx, snmp_auth: snmpv3auth, snmp_priv: snmpv3priv, snmp_group: snmpv3group}
+
+...
+

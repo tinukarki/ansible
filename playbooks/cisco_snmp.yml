@@ -1,0 +1,26 @@
+---
+ - name: configure snmp details cisco routers
+   connection: local
+   gather_facts: False
+   hosts: cisco_router
+   vars_files:
+   - /etc/ansible/vars/credentials.yml
+   - /etc/ansible/vars/main.yml
+   
+   tasks:
+
+   - name: configure provider
+     set_fact:
+       provider:
+         username: "{{username}}"
+         password: "{{password}}"
+         host: "{{inventory_hostname}}"
+
+
+   - name: configure snmp
+     ios_config:
+       provider: "{{provider}}"
+       lines:
+       - snmp-server user {{item.snmp_user}} {{item.snmp_group}} v3 auth md5 {{item.snmp_auth}} priv 3des {{item.snmp_priv}}
+     with_items: "{{cisco_router}}"
+...
